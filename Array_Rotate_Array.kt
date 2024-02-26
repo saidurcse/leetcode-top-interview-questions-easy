@@ -3,7 +3,6 @@ https://leetcode.com/explore/featured/card/top-interview-questions-easy/92/array
 class Solution {
     fun rotate(nums: IntArray, k: Int): Unit {
         
-        var prev = nums[0]
         val n = nums.size
         val copy = nums.copyOf()
 
