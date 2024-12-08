@@ -43,3 +43,19 @@ class Solution {
 // Time complexity: O(n)
 // Space complexity: O(n)
 
+class TreeNode(var `val`: Int) {
+    var left: TreeNode? = null
+    var right: TreeNode? = null
+}
+
+fun maxDepth(root: TreeNode?): Int {
+    if (root == null) return 0
+
+    val leftDepth = maxDepth(root.left)
+    val rightDepth = maxDepth(root.right)
+
+    return 1 + maxOf(leftDepth, rightDepth)
+}
+
+// Time complexity: O(n)
+// Space complexity: O(n) best case O(log(n)))
