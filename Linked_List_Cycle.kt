@@ -1,5 +1,8 @@
 https://leetcode.com/explore/featured/card/top-interview-questions-easy/93/linked-list/773/
 
+// Two pointers are used: slow moves one step at a time. fast moves two steps at a time. 
+// Both slow and fast point to the first node of the linked list initially.
+// slow and fast both start at head. If the list has a cycle, slow and fast will eventually meet.
 class Solution {
     fun hasCycle(head: ListNode?): Boolean {
         var slow = head
