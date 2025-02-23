@@ -18,7 +18,8 @@ class Solution {
 class Solution {
     fun isSymmetric(root: TreeNode?): Boolean {
         val queue = LinkedList<TreeNode?>()
-        queue.add(root)
+        //The root node is added twice to the queue to start the mirroring check
+		queue.add(root)
         queue.add(root)
 
         while(queue.isNotEmpty()) {
