@@ -59,3 +59,30 @@ fun maxDepth(root: TreeNode?): Int {
 
 // Time complexity: O(n)
 // Space complexity: O(n) best case O(log(n)))
+
+// Recursion Optimized way
+
+/**
+ * Example:
+ * var ti = TreeNode(5)
+ * var v = ti.`val`
+ * Definition for a binary tree node.
+ * class TreeNode(var `val`: Int) {
+ *     var left: TreeNode? = null
+ *     var right: TreeNode? = null
+ * }
+ */
+ 
+class Solution {
+    fun maxDepth(root: TreeNode?): Int {
+        
+        if(root == null) return 0
+        
+        var leftDepth = maxDepth(root.left)
+        var rightDepth = maxDepth(root.right)            
+        
+        return 1 + maxOf(leftDepth, rightDepth) 
+    }
+}
+// Time complexity: O(n)
+// Space complexity: O(n)
