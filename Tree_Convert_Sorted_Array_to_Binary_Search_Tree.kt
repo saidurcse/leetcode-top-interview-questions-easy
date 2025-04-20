@@ -30,3 +30,28 @@ class Solution {
 // Time complexity: O(n)
 // Space complexity: O(log(n)))
 
+class Solution {
+    
+    public TreeNode sortedArrayToBST(int[] nums) {
+        if (nums.length == 0) {
+            return null;
+        }
+            
+        TreeNode head = helper(nums, 0, nums.length - 1);
+        return head;
+    }
+        
+   private TreeNode helper(int[] nums, int left, int right) {
+        if (left > right) {
+            return null;
+        }
+        
+        int mid = left + (right - left) / 2; // Pick the middle element as root
+        
+        TreeNode root = new TreeNode(nums[mid]);
+        root.left = helper(nums, left, mid - 1); // Check if any elements remaining on the left side // add left subtree
+        root.right = helper(nums, mid + 1, right); // Check if any elements remaining on the right side // add right subtree
+        
+        return root;
+    }
+}
